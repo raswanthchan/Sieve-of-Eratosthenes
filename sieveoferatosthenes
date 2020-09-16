@@ -1,0 +1,41 @@
+solution #1
+n = int(input("Please enter a number till which you need all primes: "))
+primes = [i for i in range(2, n + 1)]
+print("Numbers list upto", n, "are:")
+print(primes)
+
+for i in range(len(primes)):
+  current_prime = primes[i]
+  if current_prime != 0:
+    # Write your code frome here.
+    for j in range(current_prime + i, len(primes), current_prime):
+      primes[j] = 0
+
+primes_res = []
+for i in range(len(primes)):
+  if primes[i] != 0:
+    primes_res.append(primes[i])
+
+print("Prime numbers upto", n, "are:")
+print(primes_res)    
+
+solution #2 - alternate solution
+n = int(input("Please enter a number till which you need all primes: "))
+primes = [i for i in range(n + 1)]
+print("Numbers list upto", n, "are:")
+print(primes)
+
+for prime in range(2, len(primes)):
+  current_prime = prime
+  if current_prime != 0: 
+    # Write your code from here.  
+    for i in range(current_prime * 2, len(primes), current_prime):
+      primes[i] = 0 
+
+primes_res = []
+for i in range(len(primes)):
+  if primes[i] != 0:
+    primes_res.append(primes[i])
+
+print("Prime numbers upto", n, "are:")
+print(primes_res[1:])    
